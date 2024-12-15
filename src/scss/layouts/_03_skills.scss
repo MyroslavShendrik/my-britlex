@@ -7,26 +7,70 @@
 	}
 	.skills-list {
 		 display: flex;
-		 gap: 21px;
 		 flex-direction: column;
+		 gap: 21px;
+		}
 
 		@media (min-width: getBreakPoint('md')) {
-			 flex-wrap:wrap;
+			//  flex-wrap: wrap;
+			 //  flex-direction: row;
+			 display: grid;
+			//  grid-template-columns:1fr 1fr; 
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows:repeat(2, 534px);
 			 column-gap: 30px;
 			 row-gap: 34px;
-             flex-direction: row;
+		}
+		@media (min-width: getBreakPoint('lg')){
+			grid-template-columns:repeat(3, 1fr);
+			grid-template-rows: 441px 241px;
+			grid-template-areas:
+			'first second third'
+			'first fourth fourth'
+			// 1-first
+            // 2-second
+            // 3-third
+            // 4-fourth
+		;
 		}
 		&__item {
 			background-color: #f5f5f5;
 			padding: 10px 17px 44px 15px;
+			outline: 1px solid blue;
+			&:nth-child(1){
+				@media (min-width: getBreakPoint('lg')) {
+				grid-area: first;
+				}
+			}
+			&:nth-child(2){
+				@media (min-width: getBreakPoint('lg')) {
+				grid-area: second;
+				}
+			}
+			&:nth-child(3){
+				@media (min-width: getBreakPoint('lg')) {
+				grid-area: third;
+				}
+			}
+			&:nth-child(4){
+				@media (min-width: getBreakPoint('lg')) {
+				grid-area: fourth;
+				}
+
 			@media (min-width: getBreakPoint('md')) {
-				flex-grow: 1;
-				width:240px; 
+				display: flex;
+				flex-direction: column;
+				// width:240px; 
+				// height: 534px;
+		    
 				&:nth-child(1){	
+				  
 				}
 				&:nth-child(2){
+
 				}
 				&:nth-child(3){
+
 				}
 				&:nth-child(4){
 
@@ -84,10 +128,11 @@
 			font-weight: 400;
 			font-size: 13px;
 			color: #8f95a5;
-			margin-bottom: 36px;
-
+			// margin-bottom: 36px;
+            outline: 1px solid red;
 			@media (min-width: getBreakPoint('md')){
            font-size: 12px;
+		   flex-grow: 1;
 			}
 		}
 		&__btn {
@@ -95,16 +140,6 @@
 			font-size: 14px;
 			@media (min-width: getBreakPoint('md')){
 				height: 50px;
-			}
-		}
-		&__text--2{
-			font-weight: 400;
-			font-size: 13px;
-			color: #8f95a5;
-			margin-bottom: 36px;
-			@media (min-width: getBreakPoint('md')){
-				margin-bottom: 28px;
-				font-size: 12px;
 			}
 		}
 	}
