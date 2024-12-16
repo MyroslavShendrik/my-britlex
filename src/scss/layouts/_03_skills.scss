@@ -4,15 +4,15 @@
 	font-family: getFont('font-family');
 
 	//! Медіа-запити
-		//* Від 575px
-		@media screen and (min-width: getBreakPoint('md')) {
-			// height: 1300px; //? для перевірки - md
-		}
-	
-		//* Від 767px
-		@media screen and (min-width: getBreakPoint('lg')) {
-			height: 830px; //? для перевірки - lg
-		}
+	//* Від 575px
+	@media screen and (min-width: getBreakPoint('md')) {
+		// height: 1300px; //? для перевірки - md
+	}
+
+	//* Від 767px
+	@media screen and (min-width: getBreakPoint('lg')) {
+		height: 830px; //? для перевірки - lg
+	}
 
 	.title {
 		@include title-section;
@@ -46,7 +46,10 @@
 				// 2-second
 				// 3-third
 				// 4-fourth
-				;
+;
+&:nth-child(2) .skills-list__item {
+	padding-bottom: 100px;
+}
 		}
 
 		&__item {
@@ -104,6 +107,10 @@
 					height: 185px;
 					background-image: url(../images/03_2-1_skills_background-md.svg);
 				}
+				@media (min-width: getBreakPoint('lg')) {
+					height: 134px;
+					background-image: url(../images/03_3-1_skills_background-lg.svg);
+				}
 			}
 			&:nth-child(2) .skills-list__title::before {
 				height: 204px;
@@ -111,6 +118,11 @@
 				@media (min-width: getBreakPoint('md')) {
 					height: 182px;
 					background-image: url(../images/03_2-2_skills_background-md.svg);
+				}
+				@media (min-width: getBreakPoint('lg')) {
+					margin-bottom: -14px;
+					height: 200px;
+					background-image: url(../images/03_3-2_skills_background-lg.svg);
 				}
 			}
 			&:nth-child(3) .skills-list__title::before {
@@ -120,6 +132,10 @@
 					height: 132px;
 					background-image: url(../images/03_2-3_skills_background-md.svg);
 				}
+				@media (min-width: getBreakPoint('lg')) {
+					height: 144px;
+					background-image: url(../images/03_3-3_skills_background-lg.svg);
+				}
 			}
 			&:nth-child(4) .skills-list__title::before {
 				height: 154px;
@@ -127,6 +143,20 @@
 				@media (min-width: getBreakPoint('md')) {
 					height: 137px;
 					background-image: url(../images/03_2-4_skills_background-md.svg);
+				}
+				@media (min-width: getBreakPoint('lg')) {
+					display: none;
+				}
+			}
+			&:nth-child(4) .skills-list__text::after {
+				@media (min-width: getBreakPoint('lg')) {
+					background-image: url(../images/03_3-4_skills_background-lg.svg);
+					background-position: right;
+					margin-left: -12px;
+					content: '';
+					display: block;
+					background-repeat: no-repeat;
+					height: 134px;
 				}
 			}
 		}
@@ -136,6 +166,10 @@
 			font-size: 18px;
 			line-height: 444%;
 			color: #263238;
+			@media (min-width: getBreakPoint('lg')) {
+				font-size: 20px;
+				line-height: 400%;
+			}
 
 			&::before {
 				content: '';
@@ -154,6 +188,9 @@
 				font-size: 12px;
 				flex-grow: 1;
 			}
+			@media (min-width: getBreakPoint('lg')) {
+				font-size: 13px;
+			}
 		}
 		&__btn {
 			@include button(200px, 60px);
@@ -162,8 +199,8 @@
 				height: 50px;
 			}
 			@media (min-width: getBreakPoint('md')) {
-		    width: 178px;
-			font-size: 16px;
+				width: 178px;
+				font-size: 16px;
 			}
 		}
 	}
