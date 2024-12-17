@@ -7,7 +7,14 @@
 		@include title-section;
 	}
 	.pricing-list {
+		@media (min-width:getBreakPoint('lg')){
+			display: flex;
+		}
 		&__item {
+			@media (min-width:getBreakPoint('lg')){
+				display: flex;
+				flex-direction: column;
+			}
 			&:nth-child(1) .pricing-list__title::before {
 				height: 248px;
                 margin-bottom: 28px;
