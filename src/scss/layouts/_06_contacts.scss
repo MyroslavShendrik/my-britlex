@@ -3,6 +3,30 @@
 	font-family: getFont('font-family');
 	padding-bottom: 26px;
 
+	// .container{
+	// 	@media screen and (min-width: getBreakPoint('xl')){
+	// 	}
+	// }
+	.contacts-box {
+		@include outline($type: dashed, $color: red);
+		@media screen and (min-width: getBreakPoint('lg')) {
+			position: relative;
+			width: 434px;
+			margin-left: auto;
+			text-align: left;
+			&::before {
+				content: '';
+				display: block;
+				width: 233px;
+				height: 210px;
+				top: 29px;
+				// left: -290px;
+				right: calc(100% + 36px);
+				position: absolute;
+				background-image: url(../images/06_3_contacts_background-lg.svg);
+			}
+		}
+	}
 	.contacts-title {
 		@include title-section;
 	}
@@ -22,17 +46,22 @@
 			height: 228px;
 			background-image: url(../images/06_1_contacts_background-sm.svg);
 			margin-bottom: 38px;
+			@media screen and (min-width: getBreakPoint('md')) {
+			}
+			@media screen and (min-width: getBreakPoint('lg')) {
+				display: none;
+			}
 		}
 	}
 
 	.contacts-form {
-		@media (min-width:('md')){
-		display: inline;	
+		@media (min-width: ('md')) {
+			display: flex;
 		}
 		&::after {
 			content: '';
 			display: block;
-			width: 290px;
+			width: 100%;
 			height: 1px;
 			background-color: #c4c4c4;
 			background-position: center;
@@ -41,10 +70,10 @@
 		}
 
 		&__input {
-			@media (min-width: getBreakPoint('md')){
-				display: inline;	
+			@media (min-width: getBreakPoint('md')) {
+				display: inline;
 				margin-bottom: 0;
-				}
+			}
 			border: 1px solid #8f95a5;
 			border-radius: 5px;
 			width: 291px;
@@ -54,10 +83,10 @@
 			margin-bottom: 17px;
 		}
 		&__btn {
-			@media (min-width: getBreakPoint('md')){
+			@media (min-width: getBreakPoint('md')) {
 				display: inline;
-				padding: 21px 56px 15px 56px;	
-				}
+				padding: 21px 56px 15px 56px;
+			}
 			padding: 20px 110px;
 			font-weight: 500;
 			font-size: 14px;
