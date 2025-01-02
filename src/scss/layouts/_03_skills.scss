@@ -47,9 +47,6 @@
 				// 3-third
 				// 4-fourth
 ;
-&:nth-child(2) .skills-list__item {
-	padding-bottom: 100px;
-}
 		}
 
 		&__item {
@@ -99,6 +96,9 @@
 				// &:nth-child(4){
 
 				// }
+			}
+			&:nth-child(2) .skills-list__title{
+				margin-top: -33px;
 			}
 			&:nth-child(1) .skills-list__title::before {
 				height: 213px;
@@ -152,18 +152,17 @@
 				@media (min-width: getBreakPoint('lg')) {
 					background-image: url(../images/03_3-4_skills_background-lg.svg);
 					background-position: right;
-					margin-left: -12px;
+					margin-left: -22px;
 					content: '';
 					display: block;
 					background-repeat: no-repeat;
 					height: 134px;
 					width: 202px;
-
 				}
 			}
-			&:nth-child(4) .skills-list__text{
+			&:nth-child(4) .skills-list__text {
 				@media (min-width: getBreakPoint('lg')) {
-					display: flex; 
+					display: flex;
 				}
 			}
 		}
@@ -199,7 +198,7 @@
 				font-size: 13px;
 			}
 		}
-		&__span{
+		&__span {
 			width: 270px;
 		}
 		&__btn {
